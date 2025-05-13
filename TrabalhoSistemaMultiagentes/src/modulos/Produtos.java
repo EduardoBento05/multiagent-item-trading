@@ -4,10 +4,59 @@
  */
 package modulos;
 
+import jade.util.leap.Serializable;
+
 /**
  *
  * @author eduardobento
  */
-public class Produtos {
+public class Produtos implements Serializable{
+    
+    String nome;
+    double preco;
+    int quantidade;
+    
+    public Produtos(String nome,double preco,Integer quantidade){
+        this.nome = nome;
+        this.preco = preco;
+        this.quantidade = quantidade;       
+    }
+    
+    public String getNome() {
+        return nome;
+    }
+
+    public double getPreco() {
+        return preco;
+    }
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public void reduzirQuantidade(int qtd) {
+        this.quantidade -= qtd;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", preco=" + preco +
+                ", quantidade=" + quantidade +
+                '}';
+    }
+    
+    
+    public void imprimir(){
+        System.out.println("********************************");
+        System.out.println("Nome: " + nome);
+        System.out.println("Preco: " + preco);
+        System.out.println("Disponibildiade: " + quantidade);
+        System.out.println("********************************");
+    }
+    
+    
+    
     
 }
