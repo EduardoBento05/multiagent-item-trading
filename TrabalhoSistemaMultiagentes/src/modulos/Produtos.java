@@ -10,18 +10,19 @@ import jade.util.leap.Serializable;
  *
  * @author eduardobento
  */
-public class Produtos implements Serializable{
-    
+public class Produtos implements Serializable {
+
     String nome;
     double preco;
     int quantidade;
-    
-    public Produtos(String nome,double preco,Integer quantidade){
+
+    //inicializa o produto e suas informações
+    public Produtos(String nome, double preco, Integer quantidade) {
         this.nome = nome;
         this.preco = preco;
-        this.quantidade = quantidade;       
+        this.quantidade = quantidade;
     }
-    
+
     public String getNome() {
         return nome;
     }
@@ -38,25 +39,23 @@ public class Produtos implements Serializable{
         this.quantidade -= qtd;
     }
 
+    //ajustando a frase de forma mais legivel 
     @Override
     public String toString() {
-        return "Produto{" +
-                "nome='" + nome + '\'' +
-                ", preco=" + preco +
-                ", quantidade=" + quantidade +
-                '}';
+        return "Produto{"
+                + "nome='" + nome + '\''
+                + ", preco=" + preco
+                + ", quantidade=" + quantidade
+                + '}';
     }
-    
-    
-    public void imprimir(){
+
+    //imprimindo os dados do produto na tela
+    public void imprimir() {
         System.out.println("********************************");
         System.out.println("Nome: " + nome);
         System.out.println("Preco: " + preco);
         System.out.println("Disponibildiade: " + quantidade);
         System.out.println("********************************");
     }
-    
-    
-    
-    
+
 }

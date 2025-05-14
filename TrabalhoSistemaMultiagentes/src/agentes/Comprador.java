@@ -8,17 +8,16 @@ package agentes;
  *
  * @author eduardobento
  */
-
 import jade.core.Agent;
 import comportamentos.CompradorComportamentos;
 
 public class Comprador extends Agent {
+
     @Override
-    
+
     protected void setup() {
-        
-        
-        System.out.println("Agente Comprador iniciado: " + getLocalName());
+
+        System.out.println("Agente Comprador iniciado: " + getLocalName()); //mensagem de inicialização do agente
         Object[] args = getArguments();
         if (args != null && args.length == 3) {
             String produto = (String) args[0];
@@ -26,7 +25,7 @@ public class Comprador extends Agent {
             double precoMax = Double.parseDouble(args[2].toString());
             addBehaviour(new CompradorComportamentos(this, produto, quantidade, precoMax));
         } else {
-            System.out.println("Argumentos insuficientes. Encerrando agente...");
+            System.out.println("Argumentos insuficientes. Encerrando agente..."); // mensagem de erro por falta de argumentos
             doDelete();
         }
     }
